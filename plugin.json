@@ -1,0 +1,38 @@
+{
+    "version"           : "1.0.0",
+    "name"              : "NiceTheme",
+    "marketplaceName"   : {"de": "Primeshops Theme","en": "Primeshops Theme"},
+    "description"       : "This is a primeshops theme.",
+    "author"            : "Primeshops",
+    "license"           : "Primeshops",
+    "pluginIcon"        : "icon_plugin_xs.png",
+    "price"             : 0.00,
+    "shortDescription"  : {"de": "","en": "This is a primeshops theme."},
+    "authorIcon"        : "icon_author_xs.png",
+    "email"             : "info@carpetsale24.de",
+    "phone"             : "+99 999 999 99 99",
+    "categories"        : [""],
+    "keywords"          : ["plentymarkets", "plugins", "layout", "template", "primeshops"],
+    "type"              : "theme",
+    "require"           : {},
+    "namespace"         : "NiceTheme",
+    "serviceProvider"   : "NiceTheme\\Providers\\NiceThemeServiceProvider",
+    "javaScriptFiles"   : [],
+    "dataProviders"     :
+    [
+        {
+            "key"           :"NiceTheme\\Containers\\NiceThemeStyleContainer",
+            "name"          :"Stylesheet",
+            "description"   :"Add changes to the CSS file",
+            "defaultLayoutContainer": "NiceTheme::Template.Style"
+        },
+        {
+            "key"           :"NiceTheme\\Containers\\NiceThemeScriptContainer",
+            "name"          :"Script",
+            "description"   :"Add Script File",
+            "defaultLayoutContainer": "NiceTheme::Script.AfterScriptsLoaded"
+        }
+    ],
+    "containers":[]
+        
+}

@@ -1,0 +1,27 @@
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+
+<script type="x/template" id="vue-create-update-address">
+    <form ref="addressForm" method="post" @submit.prevent>
+        <address-input-group
+            template="#vue-address-input-group"
+            :address-type="addressType"
+            :modal-type="modalType"
+            :value="addressData"
+            @input="emitInputEvent($event)"
+            :optional-address-fields="optionalAddressFields"
+            :required-address-fields="requiredAddressFields"
+            :default-salutation="defaultSalutation">
+            <template #custom-address-fields>
+                {{ LayoutContainer.show("Ceres::Checkout.CustomAddressField") }}
+            </template>
+        </address-input-group>
+        <button
+            {{ set_testing_attr("data-testing", "modal-submit") }} 
+            type="submit"
+            class="btn btn-primary btn-appearance btn-block"
+            @click="validate"
+            :disabled="waiting">
+            {{ trans("Ceres::Template.addressSave") }}
+        </button>
+    </form>
+</script>
